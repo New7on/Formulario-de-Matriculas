@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Um convite especial 💌</title>
+
+<!-- Aqui ligamos o arquivo de estilo (CSS) separado -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =====================================================================
+       CARTÃO PRINCIPAL: título, botões e observação
+       ===================================================================== -->
+  <div class="cartao">
+    <h1 class="titulo">Aceita sair comigo?</h1>
+
+    <div class="opcoes">
+      <button id="btn-sim">Sim! 🥰</button>
+      <button id="btn-nao">Não!! 😡 </button>
+    </div>
+
+    <p class="observacao">
+      impossível você recusar esse convite (sério, é literalmente impossível, pode até tentar)
+    </p>
+
+    <p class="mensagem-final" id="mensagem-final">
+      Ainda bem que aceitou (como se tivesse outra opção)
+    </p>
+  </div>
+
+  <!-- =====================================================================
+       ÁUDIO / MÚSICA
+       Troque o "src" abaixo pelo link do arquivo de música (mp3) que você quer.
+       OBS: navegadores modernos costumam bloquear autoplay COM SOM sem
+       interação do usuário. Por isso, no script.js, assim que a pessoa mexer
+       o mouse ou tocar na tela pela primeira vez, a música inicia
+       automaticamente (isso já conta como "interação").
+       Se preferir usar um link do Spotify, veja a explicação no script.js,
+       logo acima da função iniciarMusica().
+       ===================================================================== -->
+  <audio id="musica" loop>
+    <source src="COLOQUE_AQUI_O_LINK_OU_ARQUIVO_DA_MUSICA.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Aqui ligamos o arquivo de JavaScript separado. -->
+  <!-- Colocamos no final do <body> para garantir que o HTML já esteja -->
+  <!-- todo carregado antes do script tentar mexer nos elementos da página. -->
+  <script src="script.js"></script>
+
+</body>
+</html>

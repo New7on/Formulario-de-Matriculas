@@ -1,0 +1,377 @@
+/* ==========================================================================
+   PALETA DE CORES
+   Troque os valores aqui para mudar o tom de tudo de uma vez só, já que
+   todo o resto do CSS usa essas variáveis.
+   ========================================================================== */
+:root{
+  --rosa-bebe:     #FFD9E8; /* rosa clarinho, cor base do fundo */
+  --lilas:         #E3D6FF; /* lilás pastel, segunda cor do fundo */
+  --pessego:       #FFE3D1; /* pêssego suave, terceira cor do fundo */
+  --lavanda:       #D9E4FF; /* lavanda azulada, quarta cor do fundo */
+  --rosa-forte:    #FF8FB3; /* rosa mais vivo, usado nos botões e destaques */
+  --rosa-escuro:   #C9497A; /* rosa escuro, usado no texto principal */
+  --branco-cartao: #FFF6FA; /* branco levemente rosado, usado no "cartão" central */
+  --texto-suave:   #8A5C74; /* cor do texto secundário (observação pequena) */
+}
+
+/* Reset básico: tira margens/paddings padrão do navegador */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+  height: 100%;
+  overflow: hidden;
+}
+
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  /* -----------------------------------------------------------------------
+     FUNDO DINÂMICO
+     Um gradiente com 4 cores pasteis que fica se movendo lentamente,
+     dando aquele efeito "vivo" e fofo no fundo da página.
+     ----------------------------------------------------------------------- */
+  background: linear-gradient(
+    -45deg,
+    var(--rosa-bebe),
+    var(--lilas),
+    var(--pessego),
+    var(--lavanda)
+  );
+  background-size: 300% 300%;      /* deixa o gradiente maior que a tela para poder "andar" */
+  animation: mover-fundo 6s ease infinite; /* anima o fundo infinitamente */
+
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Esconde o cursor padrão do sistema, pois vamos desenhar o nosso (coração) no script.js */
+  cursor: none;
+
+  position: relative;
+}
+
+.player-spotify{
+  margin: 24px auto 8px;
+  max-width: 340px;
+  background: rgba(255, 246, 250, 0.95);
+  border: 1px solid rgba(255, 143, 179, 0.32);
+  border-radius: 26px;
+  box-shadow: 0 20px 40px rgba(201, 73, 122, 0.16);
+  overflow: hidden;
+  padding: 10px;
+}
+
+.spotify-iframe{
+  width: 100%;
+  height: 110px;
+  border: none;
+  border-radius: 18px;
+  display: block;
+}
+
+.player-observacao{
+  margin: 0 auto 20px;
+  max-width: 340px;
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Animação do gradiente do fundo: vai movendo a posição do gradiente */
+@keyframes mover-fundo{
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ==========================================================================
+   CARTÃO CENTRAL (onde fica a pergunta e os botões)
+   ========================================================================== */
+.cartao{
+  position: relative;
+  background: var(--branco-cartao);
+  padding: 50px 60px;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(201, 73, 122, 0.25); /* sombra rosada suave, dá profundidade */
+  max-width: 90vw;
+  z-index: 2; /* fica acima dos corações que vão "chover" */
+}
+
+/* Título "Aceita sair comigo?" */
+.titulo{
+  font-size: 2.4rem;
+  color: var(--rosa-escuro);
+  font-weight: 700;
+
+  /* Some/aparece de forma dinâmica ao carregar a página */
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: aparecer 1.2s ease forwards;
+  animation-delay: 0.3s; /* espera um pouquinho antes de começar a animar */
+}
+
+/* Animação de entrada do título: desce suavemente enquanto aparece */
+@keyframes aparecer{
+  from{
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Área que contém os dois botões (Sim / Não) */
+.opcoes{
+  margin-top: 40px;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  opacity: 0;
+  animation: aparecer 1.2s ease forwards;
+  animation-delay: 0.9s; /* aparece um pouco depois do título */
+}
+
+/* Estilo base dos botões */
+button{
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 14px 34px;
+  border: none;
+  border-radius: 50px;
+  cursor: none; /* também some o cursor em cima do botão */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Botão "Sim" */
+#btn-sim{
+  background: var(--rosa-forte);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(255, 143, 179, 0.5);
+}
+#btn-sim:hover{
+  transform: scale(1.08);
+  box-shadow: 0 12px 25px rgba(255, 143, 179, 0.65);
+}
+
+/* Botão "Não" — o "fujão" */
+#btn-nao{
+  background: var(--rosa-forte);
+  color: #fff;
+  border: none;
+  box-shadow: 0 8px 20px rgba(255, 143, 179, 0.5);
+  z-index: 3;
+}
+#btn-nao:hover{
+  transform: scale(1.08);
+  box-shadow: 0 12px 25px rgba(255, 143, 179, 0.65);
+}
+
+/* Texto pequeno de observação embaixo dos botões */
+.observacao{
+  margin-top: 22px;
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+  font-style: italic;
+
+  opacity: 0;
+  animation: aparecer 1.2s ease forwards;
+  animation-delay: 1.3s;
+}
+
+/* Mensagem que aparece quando a pessoa clica em "Sim" */
+.mensagem-final{
+  margin-top: 25px;
+  font-size: 1.3rem;
+  color: var(--rosa-escuro);
+  font-weight: 600;
+  display: none; /* só aparece via JS depois do clique */
+}
+
+.resposta-foto{
+  width: 100%;
+  max-width: 320px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+.resposta-foto{
+  width: 100%;
+  max-width: 320px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+.popup-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.popup-conteudo{
+  background: #fff;
+  border-radius: 24px;
+  padding: 18px;
+  max-width: 90vw;
+  max-height: 90vh;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.popup-imagem{
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 18px;
+  object-fit: contain;
+}
+
+.popup-aviso{
+  color: var(--rosa-escuro);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.popup-fechar{
+  padding: 12px 22px;
+  border: none;
+  border-radius: 999px;
+  background: var(--rosa-forte);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   CHUVA DE CORAÇÕES (emojis caindo do topo até embaixo da tela)
+   Os elementos em si são criados pelo script.js; aqui só definimos a
+   aparência e a animação de queda de cada um.
+   ========================================================================== */
+.coracao-chuva{
+  position: fixed;
+  top: -10%;
+  pointer-events: none; /* para não atrapalhar cliques em botões */
+  user-select: none;
+  z-index: 1; /* fica atrás do cartão, mas acima do fundo */
+  animation-name: cair;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.fogo-particula{
+  position: fixed;
+  pointer-events: none;
+  user-select: none;
+  border-radius: 50%;
+  z-index: 4;
+  opacity: 0.95;
+  transform: translate(-50%, -50%) scale(0.8);
+  animation: fogo-explode 1.2s ease-out forwards;
+}
+
+@keyframes fogo-explode{
+  0%{
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100%{
+    opacity: 0;
+    transform: translate(calc(var(--dx) - 50%), calc(var(--dy) - 50%)) scale(0.1);
+  }
+}
+
+/* Animação de queda: desce e ainda balança de um lado para o outro */
+@keyframes cair{
+  0%{
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  50%{
+    transform: translateY(60vh) translateX(30px) rotate(180deg);
+  }
+  100%{
+    transform: translateY(120vh) translateX(-20px) rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   CURSOR PERSONALIZADO (coração rosa) + RASTRO estilo "ghost"
+   Os elementos são criados/movidos pelo script.js; aqui definimos só a
+   aparência e a animação de "sumir" do rastro.
+   ========================================================================== */
+.cursor-coracao{
+  position: fixed;
+  font-size: 26px;
+  pointer-events: none; /* o cursor não pode "bloquear" cliques */
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  user-select: none;
+}
+
+.cursor-coracao.cursor-gato{
+  animation: dancar-gato 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes dancar-gato{
+  from{
+    transform: translate(-50%, -50%) rotate(-8deg) scale(1);
+  }
+  to{
+    transform: translate(-50%, -50%) rotate(8deg) scale(1.08);
+  }
+}
+
+/* Cada "pedacinho" do rastro: começa visível e vai sumindo (efeito ghost) */
+.rastro{
+  position: fixed;
+  font-size: 18px;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  opacity: 0.7;
+  animation: sumir 0.6s ease-out forwards;
+  user-select: none;
+}
+
+@keyframes sumir{
+  from{
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to{
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+}
+
+/* Responsividade simples para telas pequenas (celular) */
+@media (max-width: 480px){
+  .cartao{
+    padding: 35px 25px;
+  }
+  .titulo{
+    font-size: 1.8rem;
+  }
+  button{
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+}

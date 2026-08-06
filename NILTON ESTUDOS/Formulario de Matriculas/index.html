@@ -21,6 +21,124 @@
           </div>
           <h1>Formulário de Matrículas</h1>
           <p>Preencha os dados abaixo para matricular seu filho na escola de educação infantil Estrelas do Amanhã.</p>
+          
+          <form action="" method="post" enctype="multipart/form-data">
+         <fieldset class="child-info">
+          <legend>Informações da criança</legend>
+
+          <div class="input-wrapper">
+            <label for="fullname">Nome completo</label>
+            <input 
+            name="fullname"
+            id="fullname"
+            type="text" 
+            placeholder="Nome da criança">
+          </div>
+
+          <div class="input-wrapper">
+            <label for="birthdate">Data de nascimento</label>
+            <input 
+            name="birthdate"
+            id="birthdate"
+            type="date"
+            lang="pt-BR" 
+            placeholder="dd/mm/aaaa">
+
+          <div class="select-wrapper">
+            <label for="gender">Gênero</label>
+            <select name="gender" id="gender">
+              <option value="">Selecione</option>
+              <option value="male">Masculino</option>
+              <option value="female">Feminino</option>
+              <option value="NA">Prefiro Não Informar</option>
+            </select>
+          </div>
+
+          <div class="textarea-wrapper">
+            <label for="medical-info">Informações médicas</label>
+            <textarea 
+            name="medical-info"
+            id="medical-info" 
+            cols="30" 
+            rows="10"
+            placeholder="A criança possui alguma condição médica, alergia ou necessidade especial? Se sim, descreva aqui."></textarea>
+            </textarea>
+          </div>
+
+          <div class="droparea-wrapper">
+            <label for="birth-file">Certidão de nascimento</label>
+            <input 
+            name="birth-file"
+            type="file" 
+            id="birth-file">
+            <img src="icons/cloud-upload.svg" alt="Ícone de upload">
+            <p>
+              Clique aqui para <br>
+              Selecionar os arquivos
+            </p>
+          </div>
+         </fieldset>   
+
+         <fieldset class="Adress">
+          <legend>Endereço Residencial</legend>
+
+          <div class="input-wrapper">
+            <label for="person-in-charge">Nome do Responsável</label>
+            <input 
+            name="person-in-charge"
+            type="text" 
+            id="person-in-charge" 
+            placeholder="Nome do Responsável">
+            <p id="major-parent">Principal responsável legal e contato de emergência</p>
+          </div>
+
+          <div class="input-wrapper">
+            <label for="phone-number">Telefone</label>
+            <input 
+            name="phone-number"
+            type="tel" 
+            id="phone-number" 
+            placeholder="(77) 9 8878-9123">
+          </div>
+          
+          <div class="input-wrapper">
+            <label for="email">Email</label>
+            <input 
+            name="email"
+            type="email" 
+            id="email" 
+            placeholder="seu.email@exemplo.com"
+            minlength="7"
+            maxlength="254"
+            required>
+          </div>
+          </fieldset>
+
+        <fieldset class="enroll-options">
+        <legend>Opções de matrícula</legend>
+
+          <div class="input-wrapper">
+            <label for="enroll-type">Seleciona o turno de estudo</label>
+            <input 
+            name="enroll-type"
+            type="radio" 
+            id="morning"
+            name="enroll-type"
+            value="morning">
+            <label for="morning">Manhã</label>
+
+            <input 
+            name="enroll-type"
+            type="radio" 
+            id="afternoon"
+            name="enroll-type"
+            value="afternoon">
+            <label for="afternoon">Tarde</label>
+          </div>
+
+        </fieldset>
+
+        </form>
         </div>
       </div>
     </main>

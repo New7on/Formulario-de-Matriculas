@@ -23,7 +23,7 @@
           <p>Preencha os dados abaixo para matricular seu filho na escola de educação infantil Estrelas do Amanhã.</p>
           
           <form action="" method="post" enctype="multipart/form-data">
-         <fieldset class="child-info">
+         <fieldset id="child-info" class="child-info">
           <legend>Informações da criança</legend>
 
           <div class="input-wrapper">
@@ -43,6 +43,7 @@
             type="date"
             lang="pt-BR" 
             placeholder="dd/mm/aaaa">
+          </div>
 
           <div class="select-wrapper">
             <label for="gender">Gênero</label>
@@ -79,7 +80,7 @@
           </div>
          </fieldset>   
 
-         <fieldset class="Adress">
+         <fieldset id="address" class="Adress">
           <legend>Endereço Residencial</legend>
 
           <div class="input-wrapper">
@@ -89,7 +90,7 @@
             type="text" 
             id="person-in-charge" 
             placeholder="Nome do Responsável">
-            <p id="major-parent">Principal responsável legal e contato de emergência</p>
+            <p>Principal responsável legal e contato de emergência</p>
           </div>
 
           <div class="input-wrapper">
@@ -114,7 +115,7 @@
           </div>
           </fieldset>
 
-        <fieldset class="enroll-options">
+        <fieldset id="enroll-options" class="enroll-options">
         <legend>Opções de matrícula</legend>
 
           <div class="input-wrapper">
@@ -126,6 +127,7 @@
             name="enroll-type"
             value="morning">
             <label for="morning">Manhã</label>
+            <img src="Icons/sun-cloud-02.svg" alt="Ícone de sol com nuvem">
 
             <input 
             name="enroll-type"
@@ -134,6 +136,7 @@
             name="enroll-type"
             value="afternoon">
             <label for="afternoon">Tarde</label>
+            <img src="icons/sun-02.svg" alt="Ícone de sol">
           </div>
 
         </fieldset>

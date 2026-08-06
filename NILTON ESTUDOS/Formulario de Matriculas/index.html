@@ -32,7 +32,8 @@
             name="fullname"
             id="fullname"
             type="text" 
-            placeholder="Nome da criança">
+            placeholder="Nome da criança"
+            required>
           </div>
 
           <div class="input-wrapper">
@@ -42,12 +43,13 @@
             id="birthdate"
             type="date"
             lang="pt-BR" 
-            placeholder="dd/mm/aaaa">
+            placeholder="dd/mm/aaaa"
+            required>
           </div>
 
           <div class="select-wrapper">
             <label for="gender">Gênero</label>
-            <select name="gender" id="gender">
+            <select name="gender" id="gender" required>
               <option value="">Selecione</option>
               <option value="male">Masculino</option>
               <option value="female">Feminino</option>
@@ -68,7 +70,7 @@
 
           <div class="droparea-wrapper">
             <label for="birth-file">Certidão de nascimento</label>
-            <div class="dropzone">
+            <div class="dropzone" required>
             <input 
             name="birth-file"
             type="file" 
@@ -79,7 +81,6 @@
 <path d="M24 26V42M24 26C22.5996 26 19.9831 29.9886 19 31M24 26C25.4004 26 28.017 29.9886 29 31" stroke="#D6D3D1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
-
             <p>
               Clique aqui para <br>
               Selecionar os arquivos
@@ -89,9 +90,74 @@
           </div>
          </fieldset>   
 
-         <fieldset id="address" class="Adress">
+         <fieldset id="address" class="address">
           <legend>Endereço Residencial</legend>
+          
+          <div class="input-wrapper">
+            <label for="CEP">CEP</label>
+            <input
+            name="CEP"
+            type="number"
+            id="CEP"
+            placeholder="00000-000"
+            maxlength="9"
+            required>
+          </div>
 
+          <div class="flex">
+            <div class="input-wrapper flex-2">
+              <label for="street">RUA</label>
+              <input
+              name="street"
+              type="text"
+              id="street"
+              placeholder="Nome da rua"
+              required>
+            </div>
+
+            <div class="input-wrapper flex-1">
+              <label for="number">Número</label>
+              <input
+              name="number"
+              type="number"
+              id="number"
+              placeholder="Número da residência"
+              min="0"
+              required>
+            </div>
+          </div>
+
+          <div class="flex">
+            <div class="input-wrapper flex-2">
+              <label for="city">Cidade</label>
+              <input
+              name="city"
+              type="text"
+              id="city"
+              value="São Paulo"
+              disabled
+              required>
+            </div>
+
+            <div class="input-wrapper flex-1">
+              <label for="state">Estado</label>
+              <input
+              name="state"
+              type="text"
+              id="state"
+              value="SP"
+              required
+              minlength="2"
+              maxlength="2"
+              disabled>
+            </div>
+          </div>
+
+        </fieldset>
+
+          
+          <fieldset id="info-parents" class="info-parents">
+          <legend>Informações do Responsável</legend>
           <div class="input-wrapper">
             <label for="person-in-charge">Nome do Responsável</label>
             <input 

@@ -156,24 +156,24 @@
         </fieldset>
 
           
-          <fieldset id="info-parents" class="info-parents">
+          <fieldset id="gardian" class="gardian">
           <legend>Informações do Responsável</legend>
           <div class="input-wrapper">
-            <label for="person-in-charge">Nome do Responsável</label>
+            <label for="gardian">Nome do Responsável</label>
             <input 
-            name="person-in-charge"
+            name="gardian"
             type="text" 
-            id="person-in-charge" 
+            id="gardian" 
             placeholder="Nome do Responsável">
-            <p>Principal responsável legal e contato de emergência</p>
+            <small>Principal responsável legal e contato de emergência</small>
           </div>
 
           <div class="input-wrapper">
-            <label for="phone-number">Telefone</label>
+            <label for="phone">Telefone</label>
             <input 
-            name="phone-number"
+            name="phone"
             type="tel" 
-            id="phone-number" 
+            id="phone" 
             placeholder="(77) 9 8878-9123">
           </div>
           
@@ -187,6 +187,10 @@
             minlength="7"
             maxlength="254"
             required>
+            <div class="error">
+              <img src="Icons/alert-circle.svg" alt="Ícone de alerta vermelho">
+              <span>Insira um email válido</span>
+            </div>
           </div>
           </fieldset>
 

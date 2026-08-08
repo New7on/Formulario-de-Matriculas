@@ -197,25 +197,34 @@
         <fieldset id="enroll-options" class="enroll-options">
         <legend>Opções de matrícula</legend>
 
-          <div class="input-wrapper">
-            <label for="enroll-type">Seleciona o turno de estudo</label>
-            <input 
-            name="enroll-type"
-            type="radio" 
-            id="morning"
-            name="enroll-type"
-            value="morning">
-            <label for="morning">Manhã</label>
-            <img src="Icons/sun-cloud-02.svg" alt="Ícone de sol com nuvem">
+            <div class="input-wrapper">
+              <label>Selecione o turno de estudo</label>
 
-            <input 
-            name="enroll-type"
-            type="radio" 
-            id="afternoon"
-            name="enroll-type"
-            value="afternoon">
-            <label for="afternoon">Tarde</label>
-            <img src="icons/sun-02.svg" alt="Ícone de sol">
+              <div class="radio-wrapper">
+                <div class="radio-inner">
+                  <div class="radio-image"></div>
+                  <input 
+                  type="radio" 
+                  name="study-shift" 
+                  id="morning"
+                  value="morning">
+                  <img src="Icons/sun-cloud-02.svg" alt="ícone de sol com núvem">
+                  <label for="morning">Manhã</label>
+                </div>
+
+                <div class="radio-inner">
+                  <div class="radio-image"></div>
+                  <input 
+                  type="radio" 
+                  name="study-shift" 
+                  id="evening"
+                  value="evening">
+                  <img src="Icons/sun-02.svg" alt="ícone de sol">
+                  <label for="evening">Tarde</label>
+                </div>
+                
+              </div>
+            
           </div>
 
         </fieldset>

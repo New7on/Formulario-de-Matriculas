@@ -29,6 +29,7 @@ position: relative;
 
   .radio-image {
     background-image: url(../../Icons/radio-default.svg);
+    background-size: contain;
     width: 1.5rem;
     height: 1.5rem;
     position: absolute;

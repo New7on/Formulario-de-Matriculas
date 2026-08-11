@@ -1,53 +1,27 @@
-#app {
+.app {
+  grid-template-columns: 400px 1fr;
   display: grid;
-  grid-template-columns: 51.25% 48.75%;
-
-  height: 100vh;
-  overflow: hidden;
+  gap: 0;
 }
 
 main {
   overflow-y: auto;
-  padding: 4rem;
+  padding: 5rem;
+  background-color: var(--shape-body);
+  border-radius: 12px;
+}
 
-  & .main-container{
-      max-width: 33rem;
-      margin-left:auto;
-  }
+.main-container{
+  margin: 0 auto;
+}
 
   main h1{
     font: var(--heading-md);
     color: var(--text-heading);
+    padding-left: 19px;
   }
 
   legend {
     font: var(--heading-sm);
     color: var(--text-heading);
   }
-}
-
-.opcoes {
-    display: flex;
-    padding: 3px;
-    border: 1px solid #3a3f45;
-    border-radius: 9px;
-}
-/* Esconde o radio original */
-.opcoes input {
-    display: none;
-}
-.opcoes label {
-    flex: 1;
-    padding: 11px 15px;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 6px;
-    color: #b8bcc2;
-    transition: 0.2s;
-}
-/* Opção selecionada */
-.opcoes input:checked + label {
-    background: #34383e;
-    color: white;
-}
-

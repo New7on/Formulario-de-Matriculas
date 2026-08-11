@@ -1,8 +1,7 @@
 aside {
 
-    width: 400px;
-    height: 740px;
-
+    width: auto;
+    height: 728px;
     background-image: url(../assets/Background.png);
     background-size: cover;
     background-position: center;
@@ -24,16 +23,11 @@ aside header img {
 
 aside h1 {
     margin-top: 20px;
+    font-family: var(--logo);
+    color: var(--pink);
 }
 
 aside p {
     margin-top: 8px;
-}
-
-h1 {
-  font: var(--logo);
-}
-
-p {
-  font: var(--body-md);
+    font: var(--body-md);
 }

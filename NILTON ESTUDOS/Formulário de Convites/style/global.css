@@ -2,7 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color:#1E1E1E;
+}
+
+body {
+  background-color: var(--shape-background);
 }
 
 :root {

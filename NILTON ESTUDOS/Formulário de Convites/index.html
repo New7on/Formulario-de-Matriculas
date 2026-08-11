@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Festivite</title>
+  <link rel="stylesheet" href="style/index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Leckerli+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <main>
+      <div class="main-container">
+        <h1 id="make-invite">
+          Crie seu convite
+        </h1>
+        <form action="" method="post" enctype="multipart/form-data">
+<fieldset id="about-the-event" class="about-the-event">
+
+  <legend id="legend-about">
+    📅 Sobre o evento
+  </legend>
+
+  <div class="input-wrapper">
+    <label for="title">Título</label>
+
+    <input 
+      type="text" 
+      name="title" 
+      id="title"
+      placeholder="Nome do evento"
+      required
+    >
+  </div>
+
+
+  <div class="form-row">
+
+    <div class="input-wrapper">
+      <label for="start">Início</label>
+
+      <input 
+        type="date" 
+        name="start" 
+        id="start"
+        required
+      >
+    </div>
+
+    <div class="input-wrapper">
+      <label for="end">Fim</label>
+
+      <input 
+        type="date" 
+        name="end" 
+        id="end"
+        required
+      >
+    </div>
+
+  </div>
+
+
+  <div class="form-row">
+
+    <div class="input-wrapper">
+      <span class="titulo">Tipo</span>
+
+      <div class="opcoes">
+
+        <input 
+          type="radio" 
+          name="tipo" 
+          id="presencial" 
+          value="presencial"
+          checked
+        >
+
+        <label for="presencial">
+          🏢 Presencial
+        </label>
+
+
+        <input 
+          type="radio" 
+          name="tipo" 
+          id="online" 
+          value="online"
+        >
+
+        <label for="online">
+          📹 Online
+        </label>
+
+      </div>
+    </div>
+
+
+    <div class="input-wrapper">
+      <label for="place">Local</label>
+
+      <input 
+        type="text" 
+        name="place" 
+        id="place"
+        placeholder="Link ou endereço"
+        required
+      >
+    </div>
+
+  </div>
+
+
+  <div class="input-wrapper">
+    <label for="description">Descrição</label>
+
+    <textarea 
+      name="description"
+      id="description"
+      cols="50"
+      rows="10"
+      placeholder="Escreva sobre os detalhes do evento">
+    </textarea>
+  </div>
+
+</fieldset>
+        </form>
+      </div>
+    </main>
+  <aside>
+    <div class="aside-container"></div>
+    <header>
+      <img src="assets/icons/Logo.svg" alt="Logo do Festivite">
+      <h1>Festivite</h1>
+      <p>Crie um convite digital para seu evento</p>
+    </header>
+  </aside>
+  </div>
+  
+</body>
+</html>

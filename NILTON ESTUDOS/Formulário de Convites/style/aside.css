@@ -1,0 +1,39 @@
+aside {
+
+    width: 400px;
+    height: 740px;
+
+    background-image: url(../assets/Background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    padding: 32px;
+}
+
+aside header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: transparent;
+}
+
+aside header img {
+    width: 48px;
+}
+
+aside h1 {
+    margin-top: 20px;
+}
+
+aside p {
+    margin-top: 8px;
+}
+
+h1 {
+  font: var(--logo);
+}
+
+p {
+  font: var(--body-md);
+}

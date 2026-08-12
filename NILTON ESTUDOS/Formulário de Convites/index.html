@@ -120,10 +120,8 @@
 
   </div>
 
-
   <div class="input-wrapper">
     <label for="description" id="label-textarea">Descrição</label>
-
     <textarea 
       name="description"
       id="description"
@@ -415,6 +413,40 @@
         <span>Outro</span>
       </label>
 
+      </div>
+    </div>
+
+    <div class="style-and-cover">
+      <div class="style-wrapper">
+      <span class="style-label">Estilo</span>
+
+        <div class="style-control">
+          <input
+          type="checkbox"
+          name="dark-mode"
+          id="dark-mode">
+
+          <label
+            for="dark-mode"
+            class="switch">
+            <span class="switch-circle"></span>
+          </label>
+          <span class="style-name"></span>
+        </div>
+      </div>
+
+      <div class="cover-wrapper">
+
+        <label
+        for="cover"
+        class="cover-label">Foto de capa</label>
+
+        <input
+        type="file"
+        name="cover"
+        id="cover"
+        accept="image/*"
+        required>
       </div>
     </div>
 </fieldset>

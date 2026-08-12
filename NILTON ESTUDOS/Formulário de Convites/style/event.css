@@ -1,3 +1,4 @@
+/*PERSONALIZAÇÃO - CORES E TEMA DO EVENTO*/
 .event-wrapper {
   display: flex;
   flex-direction: column;
@@ -52,4 +53,108 @@
   .event-options {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+/*ESTILO E FOTO DE CAPA*/
+.style-and-cover {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+  width: 100%;
+}
+
+.style-wrapper,
+.cover-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.style-name::before {
+  content: "Escuro";
+}
+
+.style-control input[type="checkbox"]:checked ~ .style-name::before {
+  content: "Claro";
+}
+
+.style-control input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.switch {
+  width: 80px;
+  height: 40px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  background-color: #1c1f22;
+  border: 2px solid #3a3f45;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.switch-circle {
+  width: 32px;
+  height: 32px;
+  background-color: #3a4046;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.style-control input[type="checkbox"]:checked + .switch {
+  background-color: #59b2ff;
+}
+
+.style-control input[type="checkbox"]:checked + .switch .switch-circle {
+  transform: translateX(36px);
+  background-color: white;
+}
+
+#cover {
+  width: 100%;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 14px;
+  color: #8b9198;
+}
+
+#cover::file-selector-button {
+  background-image: url(../assets/icons/DROP-DEFAULT.SVG);
+  width: 140px;
+  height: 40px;
+  border: 0;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  color: transparent;
+  cursor: pointer;
+}
+
+
+
+#cover:invalid::file-selector-button:hover {
+  background-image: url(../assets/icons/DROP-HOVER.svg);
+}
+
+#cover:valid::file-selector-button {
+  background-image: url(../assets/icons/DROP-FILE-DEFAULT.svg);
+}
+
+#cover:valid::file-selector-button:hover {
+  background-image: url(../assets/icons/DROP-FILE-HOVER.svg);
+}
+
+.style-control {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: max-content;
 }

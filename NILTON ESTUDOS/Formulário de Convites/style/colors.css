@@ -1,0 +1,88 @@
+.customization {
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.color-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.color-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Esconde o radio original */
+.color-options input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Cria a bolinha visual */
+.color-option {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 6px solid var(--shape-button);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Apenas efeito sutil ao passar o mouse */
+.color-option:hover {
+  filter: brightness(1.1);
+}
+
+/* Cores */
+.color-option.cyan {
+  background-color: var(--cyan);
+}
+
+.color-option.navy {
+  background-color: var(--navy);
+}
+
+.color-option.purple {
+  background-color: var(--purple);
+}
+
+.color-option.fuschia {
+  background-color: var(--fuschia);
+}
+
+.color-option.pink {
+  background-color: var(--pink);
+}
+
+.color-option.red {
+  background-color: var(--danger);
+}
+
+.color-option.orange {
+  background-color: var(--orange);
+}
+
+.color-option.yellow {
+  background-color: var(--yellow);
+}
+
+.color-option.lime {
+  background-color: var(--lime);
+}
+
+.color-option.green {
+  background-color: var(--green);
+}
+
+/* Apenas a opção selecionada recebe o contorno azul */
+.color-options input[type="radio"]:checked + .color-option {
+  outline: 3px solid #59b2ff;
+}

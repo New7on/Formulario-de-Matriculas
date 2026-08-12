@@ -40,7 +40,8 @@ button {
   border: 1px solid var(--input-stroke);
   border-radius: 0.5rem;
   padding: 0.9rem 1rem;
-  min-height: 3rem;
+  min-height: 3.8rem;
+  box-sizing: border-box;
 }
 
 input::placeholder,
@@ -58,52 +59,65 @@ main form {
 }
 
 .opcoes {
-    display: flex;
-    width: 100%;
-    gap: 0.35rem;
-    padding: 0.35rem;
-    border: 1px solid #3a3f45;
-    border-radius: 12px;
-    background: #1f2328;
+  display: flex;
+  width: 100%;
+  height: 3.8rem; /* mesma altura do input do lado */
+  gap: 0.35rem;
+  padding: 0.35rem;
+  border: 1px solid #3a3f45;
+  border-radius: 12px;
+  background: #1f2328;
+  box-sizing: border-box;
 }
 /* Esconde o radio original */
 .opcoes input {
     display: none;
 }
-.opcoes label {
+
+.tipo-option {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  padding: 0.9rem 1rem;
+  height: 100%;
   border-radius: 8px;
   color: #b8bcc2;
   font-weight: 600;
   cursor: pointer;
   transition: 0.2s ease;
-  min-height: 3.5rem;
 }
 
-.opcoes label img {
-  width: 1.25rem;
-  height: 1.25rem;
-  object-fit: contain;
-}
-
-.tipo-icon {
+.tipo-icone {
   display: inline-block;
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.3rem;
+  height: 1.3rem;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
 
+.tipo-building {
+  background-image: url('../assets/icons/building.svg');
+}
+
+.tipo-video {
+  background-image: url('../assets/icons/video.svg');
+}
+
 /* Opção selecionada */
-.opcoes input:checked + label {
+.opcoes input:checked + label,
+.opcoes input:focus-visible + label {
     background: #34383e;
     color: white;
+}
+
+#presencial:checked + label .tipo-building {
+  background-image: url('../assets/icons/building-selected.svg');
+}
+
+#online:checked + label .tipo-video {
+  background-image: url('../assets/icons/video-selected.svg');
 }
 
 main fieldset {

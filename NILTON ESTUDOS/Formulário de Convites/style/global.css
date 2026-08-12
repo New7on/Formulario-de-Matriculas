@@ -58,7 +58,6 @@ body {
 }
 
 body {
-  overflow: hidden;
   font: var(--body-sm);
   color: var(--text-body);
 }

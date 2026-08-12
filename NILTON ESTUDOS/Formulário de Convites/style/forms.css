@@ -1,3 +1,17 @@
+#legend-about {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  padding-bottom: 1rem;
+}
+
+#legend-about img {
+  width: 1rem;
+  height: 1rem;
+  display: block;
+}
+
 textarea {
   min-height: 220px;
 }
@@ -45,23 +59,47 @@ main form {
 
 .opcoes {
     display: flex;
-    padding: 3px;
+    width: 100%;
+    gap: 0.35rem;
+    padding: 0.35rem;
     border: 1px solid #3a3f45;
-    border-radius: 9px;
+    border-radius: 12px;
+    background: #1f2328;
 }
 /* Esconde o radio original */
 .opcoes input {
     display: none;
 }
 .opcoes label {
-    flex: 1;
-    padding: 11px 15px;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 6px;
-    color: #b8bcc2;
-    transition: 0.2s;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  color: #b8bcc2;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+  min-height: 3.5rem;
 }
+
+.opcoes label img {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+}
+
+.tipo-icon {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
 /* Opção selecionada */
 .opcoes input:checked + label {
     background: #34383e;

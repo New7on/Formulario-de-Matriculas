@@ -450,6 +450,93 @@
       </div>
     </div>
 </fieldset>
+
+<fieldset id="contact" class="contact">
+  <legend id="contact-legend">
+    <img src="assets/icons/contact.png" alt="Ícone de uma pessoa">
+    Dados para contato</legend>
+
+    <div class="input-wrapper">
+    <label for="name">Nome</label>
+    <input 
+      type="text" 
+      name="name" 
+      id="name"
+      placeholder="Nome completo"
+      required>
+
+      <span id="error-message" class="error-message"> <img src="/assets/icons/error.svg" alt="Ícone de exclamação chamando atenção"> Campo obrigatório</span>
+    </div>
+
+    <div class="form-row">
+    <div class="input-wrapper">
+      <label for="mail">E-mail</label>
+      <input 
+        type="email" 
+        name="mail" 
+        id="mail"
+        placeholder="exemplo@email.com"
+        required>
+    </div>
+
+    <div class="input-wrapper">
+      <label for="tel">Telefone</label>
+      <input 
+        type="tel" 
+        name="tel" 
+        id="tel"
+        placeholder="(99) 99999-9999"
+        required>
+    </div>
+  </div>
+
+</fieldset>
+
+<div class="terms">
+  <label class="checkbox-wrapper">
+    <input
+      type="checkbox"
+      name="terms"
+      id="terms"
+      required>
+
+    <span>
+      Li e concordo com os
+      <a href="#">Termos e Condições</a>
+      e com a
+      <a href="#">Política de Privacidade</a>
+    </span>
+  </label>
+
+  <label class="checkbox-wrapper">
+    <input
+      type="checkbox"
+      name="email-updates"
+      id="email-updates">
+
+    <span>
+      Aceito receber atualizações e promoções por e-mail
+    </span>
+  </label>
+
+  <label class="checkbox-wrapper">
+    <input
+      type="checkbox"
+      name="sms-updates"
+      id="sms-updates">
+
+    <span>
+      Aceito receber atualizações e promoções por SMS
+    </span>
+  </label>
+</div>
+
+<div class="form-actions">
+
+  <button type="submit"> <img src="assets/icons/ticket.svg" alt="">Gerar convite</button>
+
+</div>
+
         </form>
       </div>
     </main>
